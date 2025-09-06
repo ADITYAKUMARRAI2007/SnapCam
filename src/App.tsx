@@ -830,8 +830,8 @@ export default function App() {
   }
 
   return (
-    <div className="mobile-vh mobile-vw bg-black relative overflow-hidden">
-      {/* Instagram-like Background */}
+    <div className="mobile-vh mobile-vw relative overflow-hidden">
+      {/* Modern Background */}
       <LiquidEtherBackground 
         variant={
           currentTab === 'feed' ? 'feed' :
@@ -843,29 +843,29 @@ export default function App() {
         }
       />
 
-      {/* Instagram Header */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-black border-b border-gray-800 android-status-bar-fix">
-        <div className="flex items-center justify-between py-4 px-6">
+      {/* Modern Header */}
+      <div className="absolute top-0 left-0 right-0 z-30 glass-header android-status-bar-fix">
+        <div className="flex items-center justify-between py-5 px-6">
           <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
+            <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shadow-modern-sm">
+              <span className="text-white font-bold text-2xl">S</span>
             </div>
-            <h1 className="text-white text-xl font-semibold">
+            <h1 className="text-white text-2xl font-bold">
               SnapCap
             </h1>
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <button 
               onClick={() => setCurrentTab('chat')}
-              className="text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center"
+              className="text-white/80 hover:text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center rounded-xl hover:bg-white/10 transition-all duration-200"
             >
               <MessageCircle className="w-6 h-6" />
             </button>
             
             <button 
               onClick={() => setShowSettings(true)}
-              className="text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center"
+              className="text-white/80 hover:text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center rounded-xl hover:bg-white/10 transition-all duration-200"
             >
               <Settings className="w-6 h-6" />
             </button>
@@ -874,7 +874,7 @@ export default function App() {
       </div>
 
       {/* Main Content */}
-      <div className="absolute top-20 left-0 right-0 bottom-20 z-10 overflow-hidden">
+      <div className="absolute top-24 left-0 right-0 bottom-24 z-10 overflow-hidden">
         <div className="w-full h-full">
           {renderCurrentView()}
         </div>

@@ -61,14 +61,14 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
   ];
 
   return (
-    <div className="mobile-vh mobile-vw bg-black flex flex-col">
-      {/* Instagram Header */}
-      <div className="flex items-center justify-center py-16 android-status-bar-fix">
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">S</span>
+    <div className="mobile-vh mobile-vw flex flex-col">
+      {/* Modern Header */}
+      <div className="flex items-center justify-center py-20 android-status-bar-fix">
+        <div className="flex items-center space-x-4 animate-fade-in-up">
+          <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center shadow-modern">
+            <span className="text-white font-bold text-3xl">S</span>
           </div>
-          <h1 className="text-3xl font-bold text-white">
+          <h1 className="text-4xl font-bold text-white">
             SnapCap
           </h1>
         </div>
@@ -76,26 +76,26 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
 
       {/* Auth Form */}
       <div className="flex-1 flex items-center justify-center mobile-padding-lg">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md animate-fade-in-up">
 
-          {/* Instagram Tab Switcher */}
-          <div className="bg-gray-800 rounded-lg p-1 mb-12">
+          {/* Modern Tab Switcher */}
+          <div className="glass-card p-2 mb-12">
             <div className="flex">
               <button
-                className={`flex-1 py-4 px-6 text-base font-semibold rounded-md ${
+                className={`flex-1 py-4 px-6 text-base font-semibold rounded-xl transition-all duration-200 ${
                   isLogin
-                    ? 'bg-white text-black'
-                    : 'text-gray-400'
+                    ? 'gradient-primary text-white shadow-modern-sm'
+                    : 'text-white/60 hover:text-white'
                 }`}
                 onClick={() => setIsLogin(true)}
               >
                 Log In
               </button>
               <button
-                className={`flex-1 py-4 px-6 text-base font-semibold rounded-md ${
+                className={`flex-1 py-4 px-6 text-base font-semibold rounded-xl transition-all duration-200 ${
                   !isLogin
-                    ? 'bg-white text-black'
-                    : 'text-gray-400'
+                    ? 'gradient-primary text-white shadow-modern-sm'
+                    : 'text-white/60 hover:text-white'
                 }`}
                 onClick={() => setIsLogin(false)}
               >
@@ -148,37 +148,37 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                   </motion.div>
                 )}
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Mail className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
                     <Input
                       id="email"
                       type="email"
                       placeholder="Email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="instagram-input pl-12"
+                      className="modern-input pl-14"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="relative">
-                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Lock className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
                     <Input
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="Password"
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="instagram-input pl-12 pr-12"
+                      className="modern-input pl-14 pr-14"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-2"
+                      className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2"
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
@@ -222,7 +222,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="instagram-button text-base font-semibold disabled:opacity-50"
+                  className="modern-button text-base font-semibold disabled:opacity-50"
                 >
                   {isLoading ? (
                     <span>{isLogin ? 'Logging in...' : 'Signing up...'}</span>
