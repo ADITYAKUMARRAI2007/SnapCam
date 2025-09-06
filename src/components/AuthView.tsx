@@ -61,7 +61,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
   ];
 
   return (
-    <div className="min-h-screen flex bg-black">
+    <div className="fixed inset-0 mobile-vw mobile-vh flex bg-black overflow-y-auto">
       {/* Left Side - Branding & Features */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black" />
@@ -105,7 +105,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
       </div>
 
       {/* Right Side - Auth Form */}
-      <div className="flex-1 flex items-center justify-center p-6 lg:p-12">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12 safe-area-top safe-area-bottom">
         <div className="w-full max-w-md">
           {/* Mobile Branding */}
           <div className="lg:hidden flex items-center justify-center space-x-3 mb-12">

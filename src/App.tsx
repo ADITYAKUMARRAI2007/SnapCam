@@ -830,7 +830,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen w-full relative overflow-hidden bg-black">
+    <div className="fixed inset-0 mobile-vw mobile-vh overflow-hidden bg-black">
       {/* Liquid Ether Background for current screen */}
       <LiquidEtherBackground 
         variant={
@@ -844,45 +844,44 @@ export default function App() {
       />
 
       {/* Professional App Header */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="flex items-center justify-between py-4 px-6">
+      <div className="absolute top-0 left-0 right-0 z-30 bg-black/80 backdrop-blur-md border-b border-white/10 safe-area-top">
+        <div className="flex items-center justify-between py-3 px-4 sm:py-4 sm:px-6">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center">
               <span className="text-white font-bold text-lg">S</span>
             </div>
-            <h1 className="text-white text-xl font-semibold">
+            <h1 className="text-white text-lg sm:text-xl font-semibold">
               SnapCap
             </h1>
           </div>
           
-          <div className="flex items-center space-x-4">
-            
+          <div className="flex items-center space-x-3 sm:space-x-4">
             <button 
               onClick={() => setCurrentTab('chat')}
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors p-1"
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             <button 
               onClick={() => setShowSettings(true)}
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors p-1"
             >
-              <Settings className="w-6 h-6" />
+              <Settings className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="absolute top-16 left-0 right-0 bottom-16 z-10 overflow-hidden">
+      <div className="absolute top-14 sm:top-16 left-0 right-0 bottom-14 sm:bottom-16 z-10 overflow-hidden">
         <div className="w-full h-full">
           {renderCurrentView()}
         </div>
       </div>
 
       {/* Bottom Navigation */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
+      <div className="absolute bottom-0 left-0 right-0 z-20 safe-area-bottom">
         <BottomNavigation
           currentTab={currentTab}
           onTabChange={handleTabChange}
