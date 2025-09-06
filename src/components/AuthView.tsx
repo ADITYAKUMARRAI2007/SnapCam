@@ -28,11 +28,14 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     // Mock successful authentication
-    onAuthComplete({
+    const userData = {
       id: '1',
       email: formData.email,
       username: formData.username || formData.email.split('@')[0]
-    });
+    };
+    
+    onAuthComplete(userData);
+    setIsLoading(false);
   };
 
   const handleInputChange = (field: string, value: string) => {

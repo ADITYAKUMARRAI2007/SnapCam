@@ -756,6 +756,7 @@ export default function App() {
             onFollow={handleFollow}
             onSavePost={handleSavePost}
             onSharePost={handleSharePost}
+            onViewProfile={handleViewProfile}
             stories={stories}
             onStoryClick={() => setShowStories(true)}
           />
@@ -812,6 +813,10 @@ export default function App() {
             onLike={handleLike}
             onComment={handleComment}
             onDuet={handleDuet}
+            onFollow={handleFollow}
+            onSavePost={handleSavePost}
+            onSharePost={handleSharePost}
+            onViewProfile={handleViewProfile}
             stories={stories}
             onStoryClick={() => setShowStories(true)}
           />
@@ -825,7 +830,7 @@ export default function App() {
   }
 
   return (
-    <div className="size-full relative overflow-hidden">
+    <div className="min-h-screen w-full relative overflow-hidden bg-black">
       {/* Liquid Ether Background for current screen */}
       <LiquidEtherBackground 
         variant={
@@ -870,15 +875,19 @@ export default function App() {
       </div>
 
       {/* Main Content */}
-      <div className="absolute top-16 left-0 right-0 bottom-16">
-        {renderCurrentView()}
+      <div className="absolute top-16 left-0 right-0 bottom-16 z-10 overflow-hidden">
+        <div className="w-full h-full">
+          {renderCurrentView()}
+        </div>
       </div>
 
       {/* Bottom Navigation */}
-      <BottomNavigation
-        currentTab={currentTab}
-        onTabChange={handleTabChange}
-      />
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <BottomNavigation
+          currentTab={currentTab}
+          onTabChange={handleTabChange}
+        />
+      </div>
 
       {/* Camera Overlay */}
       <AnimatePresence>

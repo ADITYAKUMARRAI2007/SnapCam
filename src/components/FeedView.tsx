@@ -453,42 +453,53 @@ export function FeedView({ posts, onLike, onComment, onDuet, onFollow, onSavePos
         onScroll={handleScroll}
         style={{ scrollBehavior: 'smooth' }}
       >
-        {posts.map((post, index) => (
-          <div key={post.id} className="w-full h-full">
-            <ReelPost
-              post={post}
-              isActive={index === currentIndex}
-              onLike={onLike}
-              onComment={onComment}
-              onDuet={onDuet}
-              onFollow={onFollow}
-              onSavePost={onSavePost}
-              onSharePost={onSharePost}
-              onViewProfile={onViewProfile}
-            />
+        {posts.length > 0 ? (
+          posts.map((post, index) => (
+            <div key={post.id} className="w-full h-full">
+              <ReelPost
+                post={post}
+                isActive={index === currentIndex}
+                onLike={onLike}
+                onComment={onComment}
+                onDuet={onDuet}
+                onFollow={onFollow}
+                onSavePost={onSavePost}
+                onSharePost={onSharePost}
+                onViewProfile={onViewProfile}
+              />
+            </div>
+          ))
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="text-center text-white">
+              <h2 className="text-2xl font-bold mb-4">No posts yet</h2>
+              <p className="text-gray-400">Start by creating your first post!</p>
+            </div>
           </div>
-        ))}
+        )}
       </div>
 
       {/* Progress Indicator */}
-      <div className="absolute right-2 top-1/2 transform -translate-y-1/2 z-30">
-        <div className="flex flex-col space-y-1">
-          {posts.map((_, index) => (
-            <button
-              key={index}
-              className={`w-1 h-6 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-white' 
-                  : 'bg-white/30'
-              }`}
-              onClick={() => {
-                setCurrentIndex(index);
-                scrollToPost(index);
-              }}
-            />
-          ))}
+      {posts.length > 0 && (
+        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 z-30">
+          <div className="flex flex-col space-y-1">
+            {posts.map((_, index) => (
+              <button
+                key={index}
+                className={`w-1 h-6 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-white' 
+                    : 'bg-white/30'
+                }`}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  scrollToPost(index);
+                }}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
