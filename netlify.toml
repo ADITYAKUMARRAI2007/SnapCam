@@ -4,6 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  # ensure npm installs devDependencies on Netlify
-  NPM_FLAGS = "--include=dev"
-  legacy-peer-deps=true
+  NPM_FLAGS = "--include=dev --legacy-peer-deps"
+  # if you prefer separate var names, you could use:
+  # LEGACY_PEER_DEPS = "true"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
