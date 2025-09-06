@@ -62,29 +62,29 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
 
   return (
     <div className="mobile-vh mobile-vw bg-black flex flex-col">
-      {/* Mobile Header */}
-      <div className="flex items-center justify-center py-6 android-status-bar-fix">
-        <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-            <span className="text-white font-bold">S</span>
+      {/* Modern Header */}
+      <div className="flex items-center justify-center py-8 android-status-bar-fix">
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center modern-shadow">
+            <span className="text-white font-bold text-2xl">S</span>
           </div>
-          <h1 className="text-xl font-bold text-white">
+          <h1 className="text-2xl font-bold text-white">
             SnapCap
           </h1>
         </div>
       </div>
 
       {/* Auth Form */}
-      <div className="flex-1 flex items-center justify-center px-4 pb-4">
-        <div className="w-full max-w-md">
+      <div className="flex-1 flex items-center justify-center instagram-spacing">
+        <div className="w-full max-w-sm">
 
-          {/* Tab Switcher */}
-          <div className="bg-gray-900/50 rounded-xl p-1 mb-8">
+          {/* Modern Tab Switcher */}
+          <div className="glass-effect rounded-xl p-1 mb-8">
             <div className="flex">
               <button
-                className={`flex-1 py-3 px-4 text-sm font-medium rounded-lg transition-all ${
+                className={`flex-1 py-4 px-6 text-sm font-semibold rounded-lg transition-all duration-200 ${
                   isLogin
-                    ? 'bg-white text-black'
+                    ? 'bg-white text-black modern-shadow-sm'
                     : 'text-gray-400 hover:text-white'
                 }`}
                 onClick={() => setIsLogin(true)}
@@ -92,9 +92,9 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                 Log In
               </button>
               <button
-                className={`flex-1 py-3 px-4 text-sm font-medium rounded-lg transition-all ${
+                className={`flex-1 py-4 px-6 text-sm font-semibold rounded-lg transition-all duration-200 ${
                   !isLogin
-                    ? 'bg-white text-black'
+                    ? 'bg-white text-black modern-shadow-sm'
                     : 'text-gray-400 hover:text-white'
                 }`}
                 onClick={() => setIsLogin(false)}
@@ -114,10 +114,10 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-white mb-2">
+                  <h2 className="text-3xl font-bold text-white mb-3">
                     {isLogin ? 'Welcome back' : 'Create your account'}
                   </h2>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-lg">
                     {isLogin 
                       ? 'Log in to see photos and videos from friends' 
                       : 'Sign up to see photos and videos from your friends'
@@ -134,53 +134,53 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                   >
                     <Label htmlFor="username" className="text-white">Username</Label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <Input
                         id="username"
                         type="text"
                         placeholder="Enter your username"
                         value={formData.username}
                         onChange={(e) => handleInputChange('username', e.target.value)}
-                        className="glass border-white/10 text-white placeholder-gray-400 pl-12 h-12 focus:border-indigo-500 focus:ring-indigo-500/20"
+                        className="modern-input pl-12 h-14 text-lg"
                         required={!isLogin}
                       />
                     </div>
                   </motion.div>
                 )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white">Email</Label>
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-white font-medium">Email</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       id="email"
                       type="email"
                       placeholder="Enter your email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="glass border-white/10 text-white placeholder-gray-400 pl-12 h-12 focus:border-indigo-500 focus:ring-indigo-500/20"
+                      className="modern-input pl-12 h-14 text-lg"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="password" className="text-white">Password</Label>
+                <div className="space-y-3">
+                  <Label htmlFor="password" className="text-white font-medium">Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="Enter your password"
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="glass border-white/10 text-white placeholder-gray-400 pl-12 pr-12 h-12 focus:border-indigo-500 focus:ring-indigo-500/20"
+                      className="modern-input pl-12 pr-12 h-14 text-lg"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-1"
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
@@ -196,14 +196,14 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                   >
                     <Label htmlFor="confirmPassword" className="text-white">Confirm Password</Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <Input
                         id="confirmPassword"
                         type="password"
                         placeholder="Confirm your password"
                         value={formData.confirmPassword}
                         onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                        className="glass border-white/10 text-white placeholder-gray-400 pl-12 h-12 focus:border-indigo-500 focus:ring-indigo-500/20"
+                        className="modern-input pl-12 h-14 text-lg"
                         required={!isLogin}
                       />
                     </div>
@@ -224,7 +224,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full h-12 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+                  className="modern-button w-full h-14 text-lg font-semibold disabled:opacity-50"
                 >
                   {isLoading ? (
                     <span>{isLogin ? 'Logging in...' : 'Signing up...'}</span>

@@ -20,8 +20,8 @@ const tabs = [
 
 export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, userLevel = 1, userPoints = 0 }: BottomNavigationProps) {
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-white/10 android-nav-bar-fix">
-      <div className="flex items-center justify-around py-2 px-2">
+    <div className="absolute bottom-0 left-0 right-0 glass-effect border-t border-white/10 android-nav-bar-fix">
+      <div className="flex items-center justify-around py-3 px-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = currentTab === tab.id;
@@ -30,19 +30,19 @@ export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, user
           return (
             <button
               key={tab.id}
-              className={`flex flex-col items-center p-2 transition-all duration-200 min-h-[44px] min-w-[44px] ${
+              className={`flex flex-col items-center p-3 transition-all duration-200 min-h-[56px] min-w-[56px] rounded-xl ${
                 isCamera 
-                  ? 'bg-white rounded-xl text-black'
+                  ? 'bg-white text-black modern-shadow-sm'
                   : isActive 
-                    ? 'text-white' 
-                    : 'text-gray-500'
+                    ? 'text-white bg-white/10' 
+                    : 'text-gray-500 hover:text-white hover:bg-white/5'
               }`}
               onClick={() => onTabChange(tab.id)}
             >
-              <Icon className={`w-5 h-5 ${isCamera ? 'text-black' : ''}`} />
+              <Icon className={`w-6 h-6 ${isCamera ? 'text-black' : ''}`} />
               
               {!isCamera && (
-                <span className="text-xs mt-1">
+                <span className="text-xs mt-1 font-medium">
                   {tab.label}
                 </span>
               )}
