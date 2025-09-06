@@ -105,7 +105,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
       </div>
 
       {/* Right Side - Auth Form */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12 safe-area-top safe-area-bottom">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12 safe-area-top safe-area-bottom android-status-bar-fix android-nav-bar-fix">
         <div className="w-full max-w-md">
           {/* Mobile Branding */}
           <div className="lg:hidden flex items-center justify-center space-x-3 mb-12">

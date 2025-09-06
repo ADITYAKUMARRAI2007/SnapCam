@@ -20,7 +20,7 @@ const tabs = [
 
 export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, userLevel = 1, userPoints = 0 }: BottomNavigationProps) {
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-white/10 safe-area-bottom">
+    <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-white/10 safe-area-bottom android-nav-bar-fix">
       <div className="flex items-center justify-around py-2 sm:py-3 px-2 sm:px-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;

@@ -844,7 +844,7 @@ export default function App() {
       />
 
       {/* Professional App Header */}
-      <div className="absolute top-0 left-0 right-0 z-30 bg-black/80 backdrop-blur-md border-b border-white/10 safe-area-top">
+      <div className="absolute top-0 left-0 right-0 z-30 bg-black/80 backdrop-blur-md border-b border-white/10 safe-area-top android-status-bar-fix">
         <div className="flex items-center justify-between py-3 px-4 sm:py-4 sm:px-6">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center">
@@ -881,7 +881,7 @@ export default function App() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 safe-area-bottom">
+      <div className="absolute bottom-0 left-0 right-0 z-20 safe-area-bottom android-nav-bar-fix">
         <BottomNavigation
           currentTab={currentTab}
           onTabChange={handleTabChange}
