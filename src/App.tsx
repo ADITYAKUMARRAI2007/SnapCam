@@ -845,27 +845,27 @@ export default function App() {
 
       {/* Instagram Header */}
       <div className="absolute top-0 left-0 right-0 z-30 bg-black border-b border-gray-800 android-status-bar-fix">
-        <div className="flex items-center justify-between py-3 px-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
+        <div className="flex items-center justify-between py-4 px-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+              <span className="text-white font-bold text-xl">S</span>
             </div>
-            <h1 className="text-white text-lg font-semibold">
+            <h1 className="text-white text-xl font-semibold">
               SnapCap
             </h1>
           </div>
           
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <button 
               onClick={() => setCurrentTab('chat')}
-              className="text-white p-2"
+              className="text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center"
             >
               <MessageCircle className="w-6 h-6" />
             </button>
             
             <button 
               onClick={() => setShowSettings(true)}
-              className="text-white p-2"
+              className="text-white p-3 min-h-[48px] min-w-[48px] flex items-center justify-center"
             >
               <Settings className="w-6 h-6" />
             </button>
@@ -874,7 +874,7 @@ export default function App() {
       </div>
 
       {/* Main Content */}
-      <div className="absolute top-16 left-0 right-0 bottom-16 z-10 overflow-hidden">
+      <div className="absolute top-20 left-0 right-0 bottom-20 z-10 overflow-hidden">
         <div className="w-full h-full">
           {renderCurrentView()}
         </div>

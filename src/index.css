@@ -66,11 +66,44 @@ body {
 
 /* Instagram system UI fixes */
 .android-status-bar-fix {
-  padding-top: max(24px, env(safe-area-inset-top, 0px));
+  padding-top: max(32px, env(safe-area-inset-top, 0px));
 }
 
 .android-nav-bar-fix {
-  padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
+  padding-bottom: max(56px, env(safe-area-inset-bottom, 0px));
+}
+
+/* Mobile responsive spacing */
+.mobile-padding {
+  padding: 16px;
+}
+
+.mobile-padding-sm {
+  padding: 12px;
+}
+
+.mobile-padding-lg {
+  padding: 20px;
+}
+
+.mobile-padding-xl {
+  padding: 24px;
+}
+
+.mobile-margin {
+  margin: 16px;
+}
+
+.mobile-margin-sm {
+  margin: 12px;
+}
+
+.mobile-margin-lg {
+  margin: 20px;
+}
+
+.mobile-margin-xl {
+  margin: 24px;
 }
 
 /* Instagram input styling */
@@ -119,10 +152,11 @@ button, [role="button"], a {
   background: #262626;
   border: 1px solid #363636;
   border-radius: 3px;
-  padding: 9px 12px;
+  padding: 12px 16px;
   color: white;
   font-size: 16px;
   width: 100%;
+  min-height: 48px;
 }
 
 .instagram-input::placeholder {
@@ -139,11 +173,13 @@ button, [role="button"], a {
   background: #0095f6;
   border: none;
   border-radius: 4px;
-  padding: 5px 9px;
+  padding: 12px 16px;
   color: white;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  min-height: 48px;
+  width: 100%;
 }
 
 .instagram-button:disabled {
@@ -155,11 +191,12 @@ button, [role="button"], a {
   background: transparent;
   border: 1px solid #363636;
   border-radius: 4px;
-  padding: 5px 9px;
+  padding: 12px 16px;
   color: white;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  min-height: 48px;
 }
 
 /* Instagram link styling */

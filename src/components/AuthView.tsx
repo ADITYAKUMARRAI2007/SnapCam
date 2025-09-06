@@ -63,26 +63,26 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
   return (
     <div className="mobile-vh mobile-vw bg-black flex flex-col">
       {/* Instagram Header */}
-      <div className="flex items-center justify-center py-12 android-status-bar-fix">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-            <span className="text-white font-bold text-xl">S</span>
+      <div className="flex items-center justify-center py-16 android-status-bar-fix">
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+            <span className="text-white font-bold text-2xl">S</span>
           </div>
-          <h1 className="text-2xl font-bold text-white">
+          <h1 className="text-3xl font-bold text-white">
             SnapCap
           </h1>
         </div>
       </div>
 
       {/* Auth Form */}
-      <div className="flex-1 flex items-center justify-center px-8">
-        <div className="w-full max-w-sm">
+      <div className="flex-1 flex items-center justify-center mobile-padding-lg">
+        <div className="w-full max-w-md">
 
           {/* Instagram Tab Switcher */}
-          <div className="bg-gray-800 rounded-lg p-1 mb-8">
+          <div className="bg-gray-800 rounded-lg p-1 mb-12">
             <div className="flex">
               <button
-                className={`flex-1 py-3 px-4 text-sm font-semibold rounded-md ${
+                className={`flex-1 py-4 px-6 text-base font-semibold rounded-md ${
                   isLogin
                     ? 'bg-white text-black'
                     : 'text-gray-400'
@@ -92,7 +92,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                 Log In
               </button>
               <button
-                className={`flex-1 py-3 px-4 text-sm font-semibold rounded-md ${
+                className={`flex-1 py-4 px-6 text-base font-semibold rounded-md ${
                   !isLogin
                     ? 'bg-white text-black'
                     : 'text-gray-400'
@@ -112,12 +112,12 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-white mb-2">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold text-white mb-4">
                     {isLogin ? 'Welcome back' : 'Create your account'}
                   </h2>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-lg">
                     {isLogin 
                       ? 'Log in to see photos and videos from friends' 
                       : 'Sign up to see photos and videos from your friends'
@@ -134,51 +134,51 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                   >
                     <Label htmlFor="username" className="text-white">Username</Label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <Input
                         id="username"
                         type="text"
                         placeholder="Username"
                         value={formData.username}
                         onChange={(e) => handleInputChange('username', e.target.value)}
-                        className="instagram-input pl-10 h-10"
+                        className="instagram-input pl-12"
                         required={!isLogin}
                       />
                     </div>
                   </motion.div>
                 )}
 
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       id="email"
                       type="email"
                       placeholder="Email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="instagram-input pl-10 h-10"
+                      className="instagram-input pl-12"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="Password"
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="instagram-input pl-10 pr-10 h-10"
+                      className="instagram-input pl-12 pr-12"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-1"
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-2"
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
@@ -194,14 +194,14 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                   >
                     <Label htmlFor="confirmPassword" className="text-white">Confirm Password</Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <Input
                         id="confirmPassword"
                         type="password"
                         placeholder="Confirm Password"
                         value={formData.confirmPassword}
                         onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                        className="instagram-input pl-10 h-10"
+                        className="instagram-input pl-12"
                         required={!isLogin}
                       />
                     </div>
@@ -222,7 +222,7 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="instagram-button w-full h-10 text-sm font-semibold disabled:opacity-50"
+                  className="instagram-button text-base font-semibold disabled:opacity-50"
                 >
                   {isLoading ? (
                     <span>{isLogin ? 'Logging in...' : 'Signing up...'}</span>

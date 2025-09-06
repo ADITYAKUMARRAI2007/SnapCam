@@ -21,7 +21,7 @@ const tabs = [
 export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, userLevel = 1, userPoints = 0 }: BottomNavigationProps) {
   return (
     <div className="absolute bottom-0 left-0 right-0 bg-black border-t border-gray-800 android-nav-bar-fix">
-      <div className="flex items-center justify-around py-2 px-4">
+      <div className="flex items-center justify-around py-4 px-6">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = currentTab === tab.id;
@@ -30,7 +30,7 @@ export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, user
           return (
             <button
               key={tab.id}
-              className={`flex flex-col items-center p-2 min-h-[48px] min-w-[48px] ${
+              className={`flex flex-col items-center p-3 min-h-[56px] min-w-[56px] ${
                 isCamera 
                   ? 'bg-white text-black rounded-lg'
                   : isActive 
@@ -42,7 +42,7 @@ export function BottomNavigation({ currentTab, onTabChange, userStreak = 0, user
               <Icon className={`w-6 h-6 ${isCamera ? 'text-black' : ''}`} />
               
               {!isCamera && (
-                <span className="text-xs mt-1">
+                <span className="text-xs mt-1 font-medium">
                   {tab.label}
                 </span>
               )}

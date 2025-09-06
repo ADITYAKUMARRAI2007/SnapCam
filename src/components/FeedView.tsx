@@ -404,7 +404,7 @@ export function FeedView({ posts, onLike, onComment, onDuet, onFollow, onSavePos
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 0.6 }}
       >
-        <div className="px-4 py-3">
+        <div className="px-6 py-4">
           <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
             {/* Your Story */}
             <button
@@ -449,7 +449,7 @@ export function FeedView({ posts, onLike, onComment, onDuet, onFollow, onSavePos
       {/* Main Feed - Scrollable Container */}
       <div 
         ref={containerRef}
-        className="absolute top-20 left-0 right-0 bottom-0 overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+        className="absolute top-24 left-0 right-0 bottom-0 overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
         onScroll={handleScroll}
         style={{ scrollBehavior: 'smooth' }}
       >
