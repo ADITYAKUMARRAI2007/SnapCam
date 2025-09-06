@@ -1,12 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "build"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--include=dev --legacy-peer-deps"
-  # if you prefer separate var names, you could use:
-  # LEGACY_PEER_DEPS = "true"
 
 [[redirects]]
   from = "/*"
