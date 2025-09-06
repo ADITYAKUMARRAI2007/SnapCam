@@ -397,14 +397,14 @@ export function FeedView({ posts, onLike, onComment, onDuet, onFollow, onSavePos
 
   return (
     <div className="w-full h-full relative overflow-hidden bg-black">
-      {/* Modern Stories Header */}
+      {/* Instagram Stories Header */}
       <motion.div
-        className="absolute top-0 left-0 right-0 z-40 glass-effect border-b border-white/10"
+        className="absolute top-0 left-0 right-0 z-40 bg-black border-b border-gray-800"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 0.6 }}
       >
-        <div className="px-4 py-4">
+        <div className="px-4 py-3">
           <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
             {/* Your Story */}
             <button
@@ -449,7 +449,7 @@ export function FeedView({ posts, onLike, onComment, onDuet, onFollow, onSavePos
       {/* Main Feed - Scrollable Container */}
       <div 
         ref={containerRef}
-        className="absolute top-24 left-0 right-0 bottom-0 overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+        className="absolute top-20 left-0 right-0 bottom-0 overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
         onScroll={handleScroll}
         style={{ scrollBehavior: 'smooth' }}
       >

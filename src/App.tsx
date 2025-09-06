@@ -831,7 +831,7 @@ export default function App() {
 
   return (
     <div className="mobile-vh mobile-vw bg-black relative overflow-hidden">
-      {/* Liquid Ether Background for current screen */}
+      {/* Instagram-like Background */}
       <LiquidEtherBackground 
         variant={
           currentTab === 'feed' ? 'feed' :
@@ -843,29 +843,29 @@ export default function App() {
         }
       />
 
-      {/* Modern App Header */}
-      <div className="absolute top-0 left-0 right-0 z-30 glass-effect border-b border-white/10 android-status-bar-fix">
-        <div className="flex items-center justify-between py-4 px-6">
-          <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center modern-shadow-sm">
-              <span className="text-white font-bold text-xl">S</span>
+      {/* Instagram Header */}
+      <div className="absolute top-0 left-0 right-0 z-30 bg-black border-b border-gray-800 android-status-bar-fix">
+        <div className="flex items-center justify-between py-3 px-4">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+              <span className="text-white font-bold text-lg">S</span>
             </div>
-            <h1 className="text-white text-xl font-bold">
+            <h1 className="text-white text-lg font-semibold">
               SnapCap
             </h1>
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <button 
               onClick={() => setCurrentTab('chat')}
-              className="text-white/70 hover:text-white transition-all duration-200 p-2 rounded-lg hover:bg-white/10"
+              className="text-white p-2"
             >
               <MessageCircle className="w-6 h-6" />
             </button>
             
             <button 
               onClick={() => setShowSettings(true)}
-              className="text-white/70 hover:text-white transition-all duration-200 p-2 rounded-lg hover:bg-white/10"
+              className="text-white p-2"
             >
               <Settings className="w-6 h-6" />
             </button>
@@ -874,7 +874,7 @@ export default function App() {
       </div>
 
       {/* Main Content */}
-      <div className="absolute top-20 left-0 right-0 bottom-20 z-10 overflow-hidden">
+      <div className="absolute top-16 left-0 right-0 bottom-16 z-10 overflow-hidden">
         <div className="w-full h-full">
           {renderCurrentView()}
         </div>

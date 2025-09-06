@@ -1,6 +1,6 @@
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 
-/* Modern Social Media App Styling */
+/* Instagram-like Clean Design */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,7 +34,7 @@ body {
   background: #000;
 }
 
-/* Modern viewport classes */
+/* Instagram viewport classes */
 .mobile-vh {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -47,7 +47,7 @@ body {
   min-width: 100vw;
 }
 
-/* Instagram-like safe area handling */
+/* Instagram safe area handling */
 .safe-area-top {
   padding-top: env(safe-area-inset-top, 0px);
 }
@@ -64,33 +64,27 @@ body {
   padding-right: env(safe-area-inset-right, 0px);
 }
 
-/* Modern system UI fixes */
+/* Instagram system UI fixes */
 .android-status-bar-fix {
-  padding-top: max(32px, env(safe-area-inset-top, 0px));
+  padding-top: max(24px, env(safe-area-inset-top, 0px));
 }
 
 .android-nav-bar-fix {
-  padding-bottom: max(56px, env(safe-area-inset-bottom, 0px));
+  padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
 }
 
-/* Modern input styling */
+/* Instagram input styling */
 input, textarea, select {
   font-size: 16px !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 8px;
+  border-radius: 3px;
   background-clip: padding-box;
   transform: translateZ(0);
-  transition: all 0.2s ease;
 }
 
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-}
-
-/* Modern touch interactions */
+/* Instagram touch interactions */
 button, [role="button"], a {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -101,14 +95,9 @@ button, [role="button"], a {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-button:active, [role="button"]:active {
-  transform: scale(0.98);
-}
-
-/* Modern scrollbar hiding */
+/* Instagram scrollbar hiding */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -118,81 +107,70 @@ button:active, [role="button"]:active {
   display: none;
 }
 
-/* Smooth scrolling */
+/* Instagram scrolling */
 .overflow-y-scroll {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   overscroll-behavior-y: contain;
 }
 
-/* Instagram-like spacing utilities */
-.instagram-spacing {
-  padding: 16px;
-}
-
-.instagram-spacing-sm {
-  padding: 12px;
-}
-
-.instagram-spacing-lg {
-  padding: 20px;
-}
-
-.instagram-spacing-xl {
-  padding: 24px;
-}
-
-/* Modern card styling */
-.modern-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 8px;
-}
-
-/* Modern button styling */
-.modern-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.modern-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.modern-button:active {
-  transform: translateY(0);
-}
-
-/* Modern input styling */
-.modern-input {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 12px 16px;
+/* Instagram input styling */
+.instagram-input {
+  background: #262626;
+  border: 1px solid #363636;
+  border-radius: 3px;
+  padding: 9px 12px;
   color: white;
   font-size: 16px;
   width: 100%;
-  transition: all 0.2s ease;
 }
 
-.modern-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+.instagram-input::placeholder {
+  color: #8e8e8e;
 }
 
-.modern-input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+.instagram-input:focus {
+  border-color: #a8a8a8;
+  outline: none;
+}
+
+/* Instagram button styling */
+.instagram-button {
+  background: #0095f6;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.instagram-button:disabled {
+  background: #4a4a4a;
+  color: #8e8e8e;
+}
+
+.instagram-button-secondary {
+  background: transparent;
+  border: 1px solid #363636;
+  border-radius: 4px;
+  padding: 5px 9px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Instagram link styling */
+.instagram-link {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.instagram-link:hover {
+  text-decoration: underline;
 }
 
 /* Mobile-specific improvements */
@@ -221,86 +199,28 @@ button:active, [role="button"]:active {
     transform: translateZ(0);
   }
   
-  /* Modern touch improvements */
+  /* Instagram touch improvements */
   * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
   }
   
-  /* Instagram-like system UI spacing */
+  /* Instagram system UI spacing */
   .android-status-bar-fix {
-    padding-top: max(32px, env(safe-area-inset-top, 0px));
+    padding-top: max(24px, env(safe-area-inset-top, 0px));
   }
   
   .android-nav-bar-fix {
-    padding-bottom: max(56px, env(safe-area-inset-bottom, 0px));
-  }
-  
-  /* Modern spacing for mobile */
-  .instagram-spacing {
-    padding: 20px;
-  }
-  
-  .instagram-spacing-sm {
-    padding: 16px;
-  }
-  
-  .instagram-spacing-lg {
-    padding: 24px;
-  }
-  
-  .instagram-spacing-xl {
-    padding: 28px;
+    padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
   }
 }
 
-/* Additional modern fixes */
+/* Additional Instagram fixes */
 @supports (-webkit-appearance: none) {
   .mobile-vh {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
   }
-}
-
-/* Modern glassmorphism effects */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Modern shadows */
-.modern-shadow {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.modern-shadow-sm {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Modern animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.3s ease-out;
-}
-
-/* Modern gradient backgrounds */
-.gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.gradient-bg-alt {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
