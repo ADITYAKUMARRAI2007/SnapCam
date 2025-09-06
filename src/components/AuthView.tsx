@@ -61,61 +61,22 @@ export function AuthView({ onAuthComplete }: AuthViewProps) {
   ];
 
   return (
-    <div className="fixed inset-0 mobile-vw mobile-vh flex bg-black overflow-y-auto">
-      {/* Left Side - Branding & Features */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black" />
-
-        <div className="relative z-10 flex flex-col justify-center p-12">
-          <div className="flex items-center space-x-3 mb-8">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
-            </div>
-            <h1 className="text-2xl font-bold text-white">
-              SnapCap
-            </h1>
+    <div className="mobile-vh mobile-vw bg-black flex flex-col">
+      {/* Mobile Header */}
+      <div className="flex items-center justify-center py-6 android-status-bar-fix">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
+            <span className="text-white font-bold">S</span>
           </div>
-
-          <h2 className="text-3xl font-bold text-white mb-4 leading-tight">
-            Capture moments,<br />
-            share your story
-          </h2>
-          
-          <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-            Connect with friends, share your memories, and discover amazing content from creators around the world.
-          </p>
-
-          <div className="space-y-6">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="flex items-start space-x-4"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-5 h-5 text-purple-400" />
-                </div>
-                <div>
-                  <h3 className="text-white font-medium mb-1">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <h1 className="text-xl font-bold text-white">
+            SnapCap
+          </h1>
         </div>
       </div>
 
-      {/* Right Side - Auth Form */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12 safe-area-top safe-area-bottom android-status-bar-fix android-nav-bar-fix">
+      {/* Auth Form */}
+      <div className="flex-1 flex items-center justify-center px-4 pb-4">
         <div className="w-full max-w-md">
-          {/* Mobile Branding */}
-          <div className="lg:hidden flex items-center justify-center space-x-3 mb-12">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-              <span className="text-white font-bold">S</span>
-            </div>
-            <h1 className="text-xl font-bold text-white">
-              SnapCap
-            </h1>
-          </div>
 
           {/* Tab Switcher */}
           <div className="bg-gray-900/50 rounded-xl p-1 mb-8">
